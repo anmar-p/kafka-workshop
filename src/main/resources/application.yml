@@ -1,0 +1,10 @@
+spring:
+  application:
+    name: kafka-dummy-consumer
+
+server:
+  port: 8083
+
+kafka:
+  bootstrap-servers: localhost:9092
+
