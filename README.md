@@ -32,10 +32,11 @@ Kowl:
 docker exec -it <container_id> /bin/sh
 cd /
 ```
+
 Here we can see the `bin` folder with all the command scripts (`opt/kafka/bin` if Apache image)
 Inside `etc/kafka`, there are the different properties files (`opt/kafka/config` for Apache)
 Inside `/var/lib/kafka/data`, kafka saves the messages (`/tmp/kraft-combined-logs` for Apache)
-------
+
 
 3. Create a topic
 ```bash
@@ -85,7 +86,7 @@ bin/kafka-console-producer --broker-list localhost:9092 --topic kafka-workshop-t
 bin/kafka-console-producer.sh --topic kafka-workshop-topic --bootstrap-server localhost:9092 --property "parse.key=true" --property "key.separator=:"
 ```
 and an example event
-```json
+```bash
 key1: value1
 ```
 and let's create a new consumer to read the messages:
@@ -97,7 +98,7 @@ bin/kafka-console-consumer.sh --topic kafka-workshop-topic --bootstrap-server lo
 Send multiple events like the above, and use different keys, but make sure you send multiple events with the same key.
 
 Example:
-```json
+```bash
 key1: value1_1
 key2: value2_1
 key3: value3_1
